@@ -9,7 +9,7 @@ const rock = {
 }
 
 const paper = {
-    name: 'Axe',
+    name: 'Paper',
     type: 'weapon',
     durability: 50,
     enhancement: '+15'
@@ -35,7 +35,7 @@ const brokenBottle = {
 }
 
 //Act
-const repairedAxe = gameFunc.repair(axe);
+const repairedRock = gameFunc.repair(rock);
 const failRock = gameFunc.fail(rock);
 const failPaper = gameFunc.fail(paper);
 const failScissors = gameFunc.fail(scissors);
@@ -43,7 +43,7 @@ const successRock = gameFunc.success(rock);
 //Assert
 describe('the repair function', () => {
     test('raises durability to 100', () => {
-        expect(repairedAxe.durability).toEqual(100);
+        expect(repairedRock.durability).toEqual(100);
     })
 
 })
@@ -78,7 +78,7 @@ describe('the fail functions', () => {
 
 describe('the success functions', () => {
     test('If enhancment less than 15 increase by 1', () => {
-        expect(successRock.enhancement).toEqual('14');
+        expect(successRock.enhancement).toEqual('+14');
     });
     test('The name is updated to reflect the new enhancement level', () => {
         expect(successRock.name).toEqual('+14 Rock');
